@@ -1,4 +1,3 @@
-import {getTheme, GrafanaThemeType} from "@grafana/ui";
 import {config} from '@grafana/runtime';
 import {MetricsPanelCtrl} from 'app/plugins/sdk';
 import _ from 'lodash';
@@ -33,8 +32,7 @@ const panelDefaults = {
     colorSch: []
 };
 
-const getCurrentThemeName = () => config.bootData.user.lightTheme ? GrafanaThemeType.Light : GrafanaThemeType.Dark;
-const getCurrentTheme = () => getTheme(getCurrentThemeName());
+const getCurrentTheme = () => config.theme;
 
 export class GroupedBarChartCtrl extends MetricsPanelCtrl {
 

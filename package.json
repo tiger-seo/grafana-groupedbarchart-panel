@@ -10,7 +10,7 @@
   "author": "gipong",
   "license": "MIT",
   "devDependencies": {
-    "@grafana/ui": "^6.3.2",
+    "@grafana/ui": "^6.6.2",
     "babel": "~6.5.1",
     "babel-plugin-transform-es2015-modules-systemjs": "^6.24.1",
     "grunt": "~0.4.5",

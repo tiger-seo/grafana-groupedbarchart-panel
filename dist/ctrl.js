@@ -1,9 +1,9 @@
 'use strict';
 
-System.register(['@grafana/ui', '@grafana/runtime', 'app/plugins/sdk', 'lodash', 'app/core/utils/kbn', './css/groupedBarChart.css!', './external/d3.v3.min'], function (_export, _context) {
+System.register(['@grafana/runtime', 'app/plugins/sdk', 'lodash', 'app/core/utils/kbn', './css/groupedBarChart.css!', './external/d3.v3.min'], function (_export, _context) {
     "use strict";
 
-    var getTheme, GrafanaThemeType, config, MetricsPanelCtrl, _, kbn, d3, _createClass, panelDefaults, getCurrentThemeName, getCurrentTheme, GroupedBarChartCtrl;
+    var config, MetricsPanelCtrl, _, kbn, d3, _createClass, panelDefaults, getCurrentTheme, GroupedBarChartCtrl;
 
     function _classCallCheck(instance, Constructor) {
         if (!(instance instanceof Constructor)) {
@@ -36,10 +36,7 @@ System.register(['@grafana/ui', '@grafana/runtime', 'app/plugins/sdk', 'lodash',
     }
 
     return {
-        setters: [function (_grafanaUi) {
-            getTheme = _grafanaUi.getTheme;
-            GrafanaThemeType = _grafanaUi.GrafanaThemeType;
-        }, function (_grafanaRuntime) {
+        setters: [function (_grafanaRuntime) {
             config = _grafanaRuntime.config;
         }, function (_appPluginsSdk) {
             MetricsPanelCtrl = _appPluginsSdk.MetricsPanelCtrl;
@@ -96,12 +93,8 @@ System.register(['@grafana/ui', '@grafana/runtime', 'app/plugins/sdk', 'lodash',
                 colorSch: []
             };
 
-            getCurrentThemeName = function getCurrentThemeName() {
-                return config.bootData.user.lightTheme ? GrafanaThemeType.Light : GrafanaThemeType.Dark;
-            };
-
             getCurrentTheme = function getCurrentTheme() {
-                return getTheme(getCurrentThemeName());
+                return config.theme;
             };
 
             _export('GroupedBarChartCtrl', GroupedBarChartCtrl = function (_MetricsPanelCtrl) {
